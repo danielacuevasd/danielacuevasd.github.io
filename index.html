@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniela Cuevas - Portfolio de Diseño</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 32px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .domain {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #333 0%, #667eea 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .status {
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin: 40px 0 20px;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin: 40px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+            width: 75%;
+            animation: progressAnimation 2s ease-out;
+        }
+
+        @keyframes progressAnimation {
+            from { width: 0; }
+            to { width: 75%; }
+        }
+
+        .time-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 16px;
+            margin: 30px 0 50px;
+            gap: 8px;
+        }
+
+        .time-icon {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+            border-radius: 16px;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #f0f0f0;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 24px;
+            transition: background 0.3s ease;
+        }
+
+        .feature:hover .feature-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .feature-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .footer {
+            color: #888;
+            font-size: 14px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Tablet styles */
+        @media (max-width: 1024px) {
+            .container {
+                max-width: 90%;
+                padding: 50px 30px;
+            }
+
+            .domain {
+                font-size: 42px;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 30px 20px;
+                margin: 10px;
+                border-radius: 20px;
+                max-width: 100%;
+            }
+
+            .logo {
+                width: 80px;
+                height: 80px;
+                font-size: 32px;
+                margin-bottom: 30px;
+                border-radius: 20px;
+            }
+
+            .domain {
+                font-size: 28px;
+                margin-bottom: 15px;
+                line-height: 1.1;
+            }
+
+            .status {
+                font-size: 20px;
+                margin: 25px 0 15px;
+            }
+
+            .description {
+                font-size: 14px;
+                margin-bottom: 30px;
+                padding: 0 10px;
+            }
+
+            .progress-bar {
+                margin: 30px 0;
+                height: 6px;
+            }
+
+            .time-info {
+                font-size: 14px;
+                margin: 20px 0 35px;
+            }
+
+            .section-title {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-bottom: 30px;
+            }
+
+            .feature {
+                padding: 15px;
+                border-radius: 12px;
+            }
+
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                margin-bottom: 12px;
+                border-radius: 12px;
+            }
+
+            .feature-title {
+                font-size: 14px;
+            }
+
+            .footer {
+                font-size: 12px;
+                margin-top: 30px;
+                padding-top: 20px;
+            }
+        }
+
+        /* Small mobile styles */
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px 15px;
+                margin: 5px;
+            }
+
+            .domain {
+                font-size: 24px;
+                word-break: break-all;
+            }
+
+            .status {
+                font-size: 18px;
+            }
+
+            .description {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .features {
+                gap: 12px;
+            }
+
+            .feature {
+                padding: 12px;
+            }
+
+            .feature-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+
+        /* Large desktop styles */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 700px;
+                padding: 80px 50px;
+            }
+
+            .logo {
+                width: 140px;
+                height: 140px;
+                font-size: 56px;
+                margin-bottom: 50px;
+            }
+
+            .domain {
+                font-size: 56px;
+                margin-bottom: 25px;
+            }
+
+            .status {
+                font-size: 36px;
+                margin: 50px 0 25px;
+            }
+
+            .description {
+                font-size: 20px;
+                margin-bottom: 50px;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .features {
+                gap: 40px;
+                margin-bottom: 60px;
+            }
+
+            .feature {
+                padding: 25px;
+            }
+
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+                margin-bottom: 18px;
+            }
+
+            .feature-title {
+                font-size: 18px;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <div class="logo">
+            🎨
+        </div>
+        
+        <h1 class="domain">danielacuevasd.cl</h1>
+        
+        <h2 class="status">Sitio en Construcción</h2>
+        
+        <p class="description">
+            Estoy trabajando en algo increíble para compartir mi portafolio de diseño contigo.
+        </p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        
+        <div class="time-info">
+            <svg class="time-icon" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
+            </svg>
+            Próximamente disponible
+        </div>
+        
+        <h3 class="section-title">¿Qué puedes esperar?</h3>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">
+                    📐
+                </div>
+                <div class="feature-title">Proyectos de Diseño</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">
+                    ✨
+                </div>
+                <div class="feature-title">Proceso Creativo</div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">
+                    📧
+                </div>
+                <div class="feature-title">Información de Contacto</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2025 Daniela Cuevas. Todos los derechos reservados.
+        </div>
+    </div>
+
+    <script>
+        // Responsive touch interactions for mobile
+        function initMobileInteractions() {
+            if (window.innerWidth <= 768) {
+                document.querySelectorAll('.feature').forEach(feature => {
+                    feature.addEventListener('touchstart', function() {
+                        this.style.transform = 'translateY(-5px) scale(1.02)';
+                    });
+                    
+                    feature.addEventListener('touchend', function() {
+                        setTimeout(() => {
+                            this.style.transform = 'translateY(0) scale(1)';
+                        }, 150);
+                    });
+                });
+            }
+        }
+
+        // Optimized animations for mobile
+        function initResponsiveAnimations() {
+            const container = document.querySelector('.container');
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            if (!reduceMotion) {
+                container.style.opacity = '0';
+                container.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    container.style.transition = 'all 0.8s ease-out';
+                    container.style.opacity = '1';
+                    container.style.transform = 'translateY(0)';
+                }, 100);
+            }
+        }
+
+        // Handle orientation changes
+        function handleOrientationChange() {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 500);
+        }
+
+        // Initialize all responsive features
+        document.addEventListener('DOMContentLoaded', function() {
+            initResponsiveAnimations();
+            initMobileInteractions();
+        });
+
+        window.addEventListener('orientationchange', handleOrientationChange);
+        window.addEventListener('resize', initMobileInteractions);
+    </script>
+</body>
+</html>
